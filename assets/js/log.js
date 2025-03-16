@@ -14,10 +14,13 @@ let logIn = async (e) =>{
     e.preventDefault()
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
+  
      
     try {
         let usercredential = await  signInWithEmailAndPassword(auth, email, password);
+        alert("logged In")
         if(usercredential?.user) window.location.pathname = '/index.html'
+        
     } catch (error) {
        console.log(error);       
     }  

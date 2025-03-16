@@ -76,6 +76,8 @@ import {
             isActive: true,
             timestamp: serverTimestamp()
         });
+
+        alert("signed In")
   
         if (userCredential?.user) window.location.pathname = "/index.html";
         
