@@ -1,55 +1,3 @@
-// import { 
-// auth,
-// createUserWithEmailAndPassword, 
-// sendEmailVerification,
-// //firestore
-// db,
-// doc, 
-// setDoc
-
-// } from "../../config.js";
-
-
-
-// //signIn
-// let signIn = async (e) =>{
-
-//     e.preventDefault()
-//     let email = document.getElementById("email").value
-//     let password = document.getElementById("password").value 
-//     let age = document.getElementById("age").value;
-//     let contact = document.getElementById("contact").value;
-//     let name = document.getElementById("username").value;
-//     try {
-//         let userCredintial = await  createUserWithEmailAndPassword(auth, email, password);
-
-//        // send verification email
-//        // await sendEmailVerification(auth.currentUser);
-
-//         let user = userCredintial?.user;
-//         console.log(user);
-        
-
-//         await setDoc(doc(db, "users", user.uid), {   ///// creating user in database
-//           name,
-//           age,
-//           contact,
-//           email,
-//           isActive:true,
-//           time:serverTimestamp()
-//         });
-//      if(userCredintial?.user) window.location.pathname = '/index.html'
-        
-//     } catch (error) {
-//        console.log("Error in signIn" ,error);       
-//     } 
-    
-// }
-
-// document.getElementById("sign-in")?.addEventListener("submit" , signIn);
-
-
-
 
 
 
@@ -68,7 +16,7 @@ import {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let age = document.getElementById("age").value;
-    let contact = document.getElementById("contact").value;
+    let contact = document.getElementById("user-contact").value;
     let name = document.getElementById("username").value;
     let bio = document.getElementById("userBio").value;
     

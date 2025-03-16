@@ -130,6 +130,9 @@ input{
     justify-content: space-around !important;
 }
 
+#contact-input{
+    width: 100% !important;
+}
 
 
 @media (max-width:600px){
@@ -197,26 +200,31 @@ input{
     <div class="btn-flex">
        <div class="mb-3">
       <label for="username" class="form-label">Name</label>
-      <input type="text" class="form-control input-name" required id="username" aria-describedby="emailHelp" placeholder='Enter your Name'>
+      <input type="text" class="form-control input-name" id="username" aria-describedby="emailHelp" placeholder='Enter your Name' required>
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control input-icon" required id="email" aria-describedby="emailHelp" placeholder='Enter your email'>
+      <input type="email" class="form-control input-icon"  id="email" aria-describedby="emailHelp" placeholder='Enter your email' required>
 
     </div>
            
     </div>
    <div id="emailHelp" class="form-text"  style="color: rgb(0, 68, 255);">We'll never share your email with anyone else.</div> 
 
+   <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="number" class="form-control input-name"  id="age" aria-describedby="emailHelp" placeholder='Enter your age' required>
+  </div>
+
+  <div class="mb-3">
+    <label for="age" class="form-label">Contact</label>
+    <input type="number" class="form-control input-name"  id="user-contact" aria-describedby="emailHelp" placeholder='Enter your age' required>
+  </div>
     <div class="btn-flex">
-     <div class="mb-3">
-       <label for="age" class="form-label">Age</label>
-       <input type="number" class="form-control input-name" required id="age" aria-describedby="emailHelp" placeholder='Enter your age'>
-     </div>
-     <div class="mb-3">
+     <!-- <div class="mb-3">
        <label for="contact" class="form-label">Contact</label>
-       <input type="number" required class="form-control contact-icon" id="contact" aria-describedby="emailHelp" placeholder='Enter your +99999999'>
-     </div>
+       <input type="number"  class="form-control contact-icon" id="contact-input" aria-describedby="emailHelp" placeholder='Enter your +99999999' required>
+     </div> -->
     </div>
     <div class="mb-3">
         <label for="userBio" class="form-label">Add Bio</label>
@@ -225,7 +233,7 @@ input{
     <input id="pro-image" type="file" >
     <div class="mb-3">
       <label for="password" class="form-label ">Password</label>
-      <input type="password" class="form-control pass-input" id="password" placeholder="Enter Password">
+      <input type="password" class="form-control pass-input" id="password" placeholder="Enter Password" required>
     </div>
      <p class="pt-2"  style="cursor: pointer; color: rgb(0, 0, 0); font-weight: 600;">
         Already have an account <a style="color: blue;" href="./log.html" >LogIn</a></p>
