@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA Blogs/LogIn</title>
+    <link rel="shortcut icon" href="../images/png-logo.png" type="image/x-icon">
+
+    <!-- font1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <!-- font2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- font3 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- custon css -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+    <style>
+.main{
+    padding: 0.4em;
+}
+
+form{
+     margin-top: 7em !important;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 3em;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    border-radius: 7px;
+    background-image: url(../images/background-Image.jpg);
+    object-fit: cover;
+    background-size: cover;
+    margin-bottom: 3em;
+}
+
+.form-heading{
+    font-size: 2em;
+    font-family: "Berkshire Swash", serif;
+
+}
+.form-heading span {
+color: #548350 !important; 
+font-family: "Berkshire Swash", serif;
+}
+
+input{
+
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.form-label{
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+
+
+.input-icon , .pass-input{
+    background: url(https://images.freeimages.com/fic/images/icons/2779/simple_icons/512/email_512_black.png) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-icon{
+    background: url(https://i.pinimg.com/736x/d2/d8/85/d2d885357e38e44d838381fb4c12eb13.jpg) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-name{
+    background: url(https://i.pinimg.com/736x/ad/57/b1/ad57b11e313616c7980afaa6b9cc6990.jpg) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pass-input{
+    background: url(https://i.pinimg.com/736x/ee/7e/16/ee7e16330f8f41aee93e8ac447eaf6bb.jpg) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+::placeholder{
+    color: black;
+}
+.form-btn{
+    border: none;
+}
+
+.btn-flex{
+    display: flex;
+    justify-content: space-around !important;
+}
+
+
+
+@media (max-width:600px){
+    .btn-flex{
+        display: block;
+    }
+
+    #pro-image{
+    width: 200px;
+    margin-bottom: 1em;
+}
+}
+    </style>
+</head>
+
+<body>
+
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="logoImg" src="../images/logo-blogs.jpeg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item ps-5">
+                        <a class="nav-link abc active" aria-current="page" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link abc active" id="contact" aria-current="page" href="./contact.html">Contact Us</a>
+                      </li>
+                    <li class="nav-item">
+                        <a id="log" class="nav-link abc active" aria-current="page" href="./log.html">LogIn</a>
+                    </li>
+
+                </ul>
+        
+                 <li class="nav-item">
+                    <a href="" id="adduser" class="user"><i class="fa-solid fa-user"></i></a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a id="add" class="btn btn-outline-success" href="">Write</a>
+                </li> 
+                    
+                
+               
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+
+<!-- form -->
+
+<form id="sign-in">
+    <h5 class="text-center form-heading">Sign   <span>UP</span></h5>
+    <br>
+    <div class="btn-flex">
+       <div class="mb-3">
+      <label for="username" class="form-label">Name</label>
+      <input type="text" class="form-control input-name" required id="username" aria-describedby="emailHelp" placeholder='Enter your Name'>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control input-icon" required id="email" aria-describedby="emailHelp" placeholder='Enter your email'>
+
+    </div>
+           
+    </div>
+   <div id="emailHelp" class="form-text"  style="color: rgb(0, 68, 255);">We'll never share your email with anyone else.</div> 
+
+    <div class="btn-flex">
+     <div class="mb-3">
+       <label for="age" class="form-label">Age</label>
+       <input type="number" class="form-control input-name" required id="age" aria-describedby="emailHelp" placeholder='Enter your age'>
+     </div>
+     <div class="mb-3">
+       <label for="contact" class="form-label">Contact</label>
+       <input type="number" required class="form-control contact-icon" id="contact" aria-describedby="emailHelp" placeholder='Enter your +99999999'>
+     </div>
+    </div>
+    <div class="mb-3">
+        <label for="userBio" class="form-label">Add Bio</label>
+        <input type="text" class="form-control input-name" id="userBio" aria-describedby="emailHelp" placeholder='Enter your Bio'>
+      </div>
+    <input id="pro-image" type="file" >
+    <div class="mb-3">
+      <label for="password" class="form-label ">Password</label>
+      <input type="password" class="form-control pass-input" id="password" placeholder="Enter Password">
+    </div>
+     <p class="pt-2"  style="cursor: pointer; color: rgb(0, 0, 0); font-weight: 600;">
+        Already have an account <a style="color: blue;" href="./log.html" >LogIn</a></p>
+    <button type="submit" class="btn btn-primary w-100 form-btn">SignIn</button>
+  </form>
+
+<!-- main -->
+</div>
+
+<!-- footer -->
+
+    <footer class="footer">
+        <div class="glow-top"></div>
+        <div class="container">
+            <div class="logo"><img class=" logo-footer" src="../images/logo-blogs.jpeg" alt=""></div>
+            <ul class="footer-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="./heath.html">Blogs</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+            <div class="social-icons ">
+                <a href="#"><i class="fab fa-facebook-f face"></i></a>
+                <a href="#"><i class="fab fa-twitter twit"></i></a>
+                <a href="#"><i class="fab fa-instagram insta"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in face"></i></a>
+            </div>
+        </div>
+
+
+        <div class="glow-bottom"></div> <!-- Red Glow Bottom Border -->
+
+
+    </footer>
+    <div class="creater-footer">&copy; created by Fatima Abbasi</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+       <script type="module" src="../js/onAuth.js"></script>
+        <script type="module" src="../js/sign.js"></script>
+</body>
+
+</html>

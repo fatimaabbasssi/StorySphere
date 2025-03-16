@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA Blogs/LogIn</title>
+    <link rel="shortcut icon" href="../images/png-logo.png" type="image/x-icon">
+
+    <!-- font1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <!-- font2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- font3 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- custon css -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+    <style>
+
+.main{
+    padding: 0.4em;
+}
+
+form{
+    margin-top: 7em !important;
+  
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 3em;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    border-radius: 7px;
+    background-image: url(../images/background-Image.jpg);
+    object-fit: cover;
+    margin-bottom: 3em;
+    
+}
+
+
+.form-heading{
+    font-size: 2em;
+    font-family: "Berkshire Swash", serif;
+
+}
+.form-heading span {
+color: #548350 !important; 
+font-family: "Berkshire Swash", serif;
+}
+
+
+
+
+.input-icon , .pass-input{
+    background: url(https://images.freeimages.com/fic/images/icons/2779/simple_icons/512/email_512_black.png) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-name{
+    background: url(https://e7.pngegg.com/pngimages/426/859/png-clipart-computer-icons-user-membership-black-area.png) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pass-input{
+    background: url(https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-vector-eye-icon-png-image_925911.jpg) no-repeat left center;
+    background-size: 30px;
+    padding-left: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select{
+outline: none;
+background-color: #223521;
+color: white;
+height: 30px;
+}
+
+
+
+.form-btn{
+    border: none;
+  
+}
+
+.form-label{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* 
+.btn-flex, .btn-flex2{
+    display: flex;
+    justify-content: space-around !important;
+} */
+
+@media (max-width:600px){
+    .btn-flex{
+        display: block;
+    } 
+    
+    .form-btn , .btn-flex2{
+        display: block;
+        width: 100%;
+        margin-top: 1em;
+    }
+
+    #image{
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width:400px){
+    #image{
+        font-size: 0.6em;
+        font-weight: 600;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="logoImg" src="../images/logo-blogs.jpeg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item ps-5">
+                        <a class="nav-link abc active" aria-current="page" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link abc active" aria-current="page" href="#blogs">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link abc active" aria-current="page" id="contact" href="./contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="log" class="nav-link abc active" aria-current="page" href="./sign.html">SignIn</a>
+                    </li>
+
+                    <!-- <i class="fa-solid fa-right-to-bracket"></i> -->
+                </ul>
+                <li class="nav-item">
+                    <a  href="./search.html" class="user"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+                <li class="nav-item">
+                    <a id="adduser" href="./profile.html" class="user"><i class="fa-solid fa-user"></i></a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a id="add" class="btn btn-outline-success" href="">Write</a>
+                </li>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main">
+
+<!-- form -->
+
+<form id="add-blog">
+
+    <h5 class="text-center form-heading">Add   <span>Blog</span></h5>
+      <div class="mb-3" >
+       <label for="author" class="form-label" >Your Name</label>
+       <input type="text" class="form-control" id="author" placeholder="Author :" required>
+     </div>
+     <div class="mb-3" >
+       <label for="topic" class="form-label">Your Topic </label>
+       <input type="text" class="form-control" id="topic" placeholder="Topic :" required>
+     </div>
+     <select  id="option" required>
+       <option value="">Select Catogeries</option>
+       <option value="fashion">Fashion</option>
+       <option value="health">Health</option>
+       <option value="reading">Reading</option>
+       <option value="travel">Travel</option>
+       <option value="food">Food</option>
+     </select>
+     <input id="image" type="file" required>
+     <div class="mb-3" >
+       <label for="blogContent" class="form-label">Blog Content</label>
+       <textarea class="form-control" id="blogContent" rows="3" placeholder="Add Blog Content" required></textarea>
+     </div>
+
+     
+       <button type="submit" class="btn btn-primary w-100 form-btn" >Publish</button>
+     </form>
+
+
+    </div>
+
+<!-- footer -->
+
+    <footer class="footer">
+        <div class="glow-top"></div>
+        <div class="container">
+            <div class="logo"><img class=" logo-footer" src="../images/logo-blogs.jpeg" alt=""></div>
+            <ul class="footer-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+            <div class="social-icons ">
+                <a href="#"><i class="fab fa-facebook-f face"></i></a>
+                <a href="#"><i class="fab fa-twitter twit"></i></a>
+                <a href="#"><i class="fab fa-instagram insta"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in face"></i></a>
+            </div>
+        </div>
+
+
+        <div class="glow-bottom"></div> <!-- Red Glow Bottom Border -->
+
+
+    </footer>
+    <div class="creater-footer">&copy; created by Fatima Abbasi</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <script type="module" src="../js/onAuth.js"></script>
+        <script type="module" src="../js/addblog.js"></script>
+</body>
+
+</html>

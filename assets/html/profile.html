@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA Blogs/LogIn</title>
+    <link rel="shortcut icon" href="../images/png-logo.png" type="image/x-icon">
+
+    <!-- font1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <!-- font2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- font3 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- custon css -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+    <style>
+
+/* profile */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.main{
+    padding-top: 4em;
+}
+
+.profile-card {
+  
+    background-image: url(../images/background-Image.jpg);
+    object-fit: cover;
+    background-size: cover;
+    margin: 0 auto;
+    width:450px !important;
+    padding: 30px; 
+     margin-top: 9em;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+   
+}
+
+.gear{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: white;
+}
+.profile-card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgb(26, 66, 48);
+}
+
+.profile-card p{
+    color: black;
+    font-weight: 400;
+}
+
+button{
+    border: none;
+}
+
+.social-icons{
+    display: block;
+}
+
+.social-icons a {
+    margin: 10px;
+    font-size: 30px !important;
+    color: #ffffff;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#uploadImage{
+    background-color: #385236;
+    color: #f8f9fa;
+    margin-bottom: 1em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border: none !important;
+    padding: 5px 7px ;
+    border-radius: 6px;
+}
+
+.inprofile-user{
+    display: none;
+}
+
+
+.icon-black a{
+    color: black !important;
+}
+
+.social-icons a:hover {
+    transform: rotate(10deg) scale(1.2) !important;
+}
+
+.social-icons div{
+    color: black;
+    font-weight: bold;
+}
+
+.btn:hover{
+    color: white;
+}
+
+
+.main-blogs{
+    padding: 2em;
+   
+}
+
+#user-blogs{
+     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.blog-card {
+    
+    width: 350px ;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 15px;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.blog-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.blog-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.blog-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+
+@media(max-width:500px){
+    #image{
+    width: 200px;
+    margin:  1em 0;
+}
+}
+
+@media(max-width:400px){
+   .main-blogs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7em  !important;
+   }
+
+  
+}
+
+@media(max-width:320px){
+ 
+
+   .blog-card{
+    width: 260px;
+   }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="logoImg" src="../images/logo-blogs.jpeg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item ps-5">
+                        <a class="nav-link abc active" aria-current="page" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link abc active" aria-current="page" href="./fashion.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link abc active" id="contact" aria-current="page" href="./contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="log" class="nav-link abc active"  aria-current="page" href="./sign.html">SignIn</a>
+                    </li>
+                  
+
+
+                </ul>
+                <li class="nav-item">
+                    <a  href="./search.html" class="user"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a id="adduser" href="./profile.html" class="user inprofile-user"><i class="fa-solid fa-user"></i></a>
+                  </li>
+                <li class="nav-item">
+                    <a id="add" class="btn btn-outline-success" href="./addblog.html">Write</a>
+                </li>
+                    
+             </div>
+        </div>
+    </nav>
+
+
+ <!-- profile  -->
+
+
+<div class="main">
+<div class="container main-profile d-flex justify-content-center align-items-center" style="height: 100vh;">
+       
+    <div class="profile-card">
+      <button type="button" class="btn gear" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-gear "></i>
+      </button>
+        <img id="pro-img" src='https://i.pinimg.com/736x/44/95/12/4495124f97de536535464aa6558b4452.jpg' alt="Profile Picture" class="profile-img">
+        <br>
+        <input id="image" type="file" > <br>
+        <button id="uploadImage">upload</button>
+         <br>
+        <input id="user-name" type="text">
+        <br> <br>
+        <h4> Age:  <span id="user-age"></span></h4>
+        <p id="get-bio"></p>
+        <div class="social-icons icon-black">
+            <a href="#"><i class="fab fa-facebook face"></i></a>
+            <a href="#"><i class="fab fa-twitter twit"></i></a>
+            <a href="#"><i class="fab fa-instagram insta"></i></a>
+            <a href="#"><i class="fab fa-linkedin face"></i></a>
+            
+           <div>email : <span id="user-email">abc@gmail.com</span></div>
+           <div>contact : <span id="user-contact">030555555555</span></div>
+             <button id="signOut" class="p-2 btn rounded mx-auto mt-2" style="border: none; margin-left: -5em;">signOut</button> 
+          
+             <!-- <button id="deleteAcc" class="p-2 btn rounded mx-auto mt-2" style="border: none; margin-left: -5em;">Delete Account</button>  -->
+        </div>
+    </div>
+</div>
+ 
+
+
+<br><br>
+
+<div class="main-blogs">
+    <h2>My Blogs</h2>
+    <div id="user-blogs"></div>
+</div>
+
+<!-- MAINCLOSING -->
+</div>
+
+
+
+<!-- footer -->
+
+    <footer class="footer">
+        <div class="glow-top"></div>
+        <div class="container">
+            <div class="logo"><img class=" logo-footer" src="../images/logo-blogs.jpeg" alt=""></div>
+            <ul class="footer-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="./read.html">Blogs</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f face"></i></a>
+                <a href="#"><i class="fab fa-twitter twit"></i></a>
+                <a href="#"><i class="fab fa-instagram insta"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in face"></i></a>
+            </div>
+        </div>
+
+
+        <div class="glow-bottom"></div> <!-- Red Glow Bottom Border -->
+
+
+    </footer>
+    <div class="creater-footer">&copy; created by Fatima Abbasi</div>
+
+
+
+    
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="newpassword" class="form-label">Change Password</label>
+            <input type="password" class="form-control" id="newpassword">
+          </div>
+          <button type="button" id="updatepass" class="btn ">Update password</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn " data-bs-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+  
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        
+      
+        <script type="module" src="../js/profile.js"></script>
+        <script type="module" src="../js/onAuth.js"></script>
+</body>
+
+</html>
