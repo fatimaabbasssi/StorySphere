@@ -60,7 +60,6 @@ onAuthStateChanged(auth, async (user) => {
         fetchUserBlogs(userId);
 
     } else {
-        alert("Signed Out");
         if (window?.location?.pathname === "/assets/html/profile.html") {
             window.location.replace("/index.html");
         }

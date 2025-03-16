@@ -86,6 +86,10 @@ body{
 
 }
 
+.author-span{
+    color: rgb(255, 157, 121);
+}
+
 .input-group{
     width: 300px !important;
     margin-right: 3em;

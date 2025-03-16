@@ -4,7 +4,8 @@ updatePassword ,
 signOut,} from "../../config.js";
 
 let _signOut = () =>{
-    signOut(auth)
+    alert("Signed Out");
+    signOut(auth)  
 }
 
 document.getElementById("signOut").addEventListener("click" , _signOut);

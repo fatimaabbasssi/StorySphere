@@ -25,7 +25,7 @@ import { db,
                     <img src="${blog.image}" alt="${blog.topic}">
                     <div class="info-text">
                         <h3>${blog.topic}</h3>
-                         <button class="author">${blog.author}</button>
+                         <button class="author"><span class="author-span">Author : </span> ${blog.author}</button>
                         <button class="cate">${blog.category}</button>
                         <p>${blog.blogcontent}</p>
                         <p>${blog.time}</p>
