@@ -74,14 +74,14 @@ onAuthStateChanged(auth, async (user) => {
 
 });
 
-// 
+// current user blogs
 let fetchUserBlogs = async (userId) => {
     try {
         let q = query(collection(db, "blogs"), where("authorId", "==", userId));
         let blogsSnapshot = await getDocs(q);
 
         if (blogsSnapshot.empty) {
-            blogContainer.innerHTML = "<h3>No Blogs Found!</h3>";
+            blogContainer.innerHTML = "<h3>No Blogs Found</h3>";
             return;
         }
 
@@ -98,7 +98,7 @@ let fetchUserBlogs = async (userId) => {
                     <p>${blogData.blogcontent}</p>
                     <p><strong>Category:</strong> ${blogData.category}</p>
                     <p><strong>Time:</strong> ${blogData.time}</p>  
-                    <button type="button" onclick="deleteBlog('${blogId}')"  class="btn text-light bg-danger "><i class="fa-solid fa-trash"></i></button>    
+                    <button type="button" onclick="deleteBlog('${blogId}', '${userId}')"  class="btn text-light bg-danger "><i class="fa-solid fa-trash"></i></button>    
                     <button type="button" onclick="openModal('${blogId}')"  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalBlog" data-bs-whatever="@mdo"> <i class="fa-solid fa-pencil"></i></button>
 
                 </div>
@@ -114,13 +114,17 @@ let fetchUserBlogs = async (userId) => {
 //deleting blog
 
 
-window.deleteBlog = async (id)=>{
+window.deleteBlog = async (id, userId)=>{
     try {
    
       let userDel = doc(db, "blogs", id);
       await deleteDoc(userDel);
 
       alert("Deleted")
+      //removing blog realtime
+     document.getElementById(id)?.remove();
+     //refreshing blogs
+     fetchUserBlogs(userId);
      
     } catch (error) {
       console.log(error);
@@ -137,7 +141,7 @@ window.openModal = async (id) => {
         let blogSnap = await getDoc(blogRef);
 
         if (!blogSnap.exists()) {
-            alert("No such blog found!");
+            alert("No blog found!");
             return;
         }
 
