@@ -38,7 +38,7 @@ let addingBlog = async (e) => {
         let date = new Date();
         let timeStamp = `${date.getMonth()}, ${date.getDate()}, ${date.getFullYear()}`;
 
-        // 🔥 *Get Current User ID Before Adding Blog*
+       
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 let reference = await addDoc(collection(db, "blogs"), {
@@ -53,7 +53,8 @@ let addingBlog = async (e) => {
 
                 console.log("Blog added with id:", reference.id);
                 alert("Blog Added")
-                window.location.pathname = "/index.html";
+                window.location.pathname = "/assets/html/profile.html"
+                // window.location.pathname = "/index.html"
             } else {
                 console.log("User not logged in");
             }

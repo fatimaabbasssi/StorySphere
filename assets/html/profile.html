@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FA Blogs/LogIn</title>
+    <title>FA Blogs/Add-Blog</title>
     <link rel="shortcut icon" href="../images/png-logo.png" type="image/x-icon">
 
     <!-- font1 -->
@@ -138,6 +138,14 @@ button{
 .main-blogs{
     padding: 2em;
    
+}
+
+#sign {
+    display: none;
+}
+
+#homewrite{
+    display: none !important;
 }
 
 #user-blogs{
@@ -292,7 +300,8 @@ button{
            <div>email : <span id="user-email">abc@gmail.com</span></div>
            <div>contact : <span id="user-contact">030555555555</span></div>
              <button id="signOut" class="p-2 btn rounded mx-auto mt-2" style="border: none; margin-left: -5em;">signOut</button> 
-          
+             <a href="./sign.html" id="sign"  class="btn">Sign Up</a>
+             <a href="./addblog.html" id="homewrite"  class="btn">Write</a>
              <!-- <button id="deleteAcc" class="p-2 btn rounded mx-auto mt-2" style="border: none; margin-left: -5em;">Delete Account</button>  -->
         </div>
     </div>
@@ -366,8 +375,51 @@ button{
   
     
   
-  
+<!-- modal for updating blog -->
 
+<div class="modal fade" id="exampleModalBlog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Blog</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+        <form id="add-blog">
+
+              <div class="mb-3" >
+               <label for="author" class="form-label" >Your Name</label>
+               <input type="text" class="form-control" id="newauthor" placeholder="Author :" required>
+             </div>
+             <div class="mb-3" >
+               <label for="topic" class="form-label">Your Topic </label>
+               <input type="text" class="form-control" id="topic" placeholder="Topic :" required>
+             </div>
+             <select  id="option" required>
+               <option value="">Select Catogeries</option>
+               <option value="fashion">Fashion</option>
+               <option value="health">Health</option>
+               <option value="reading">Reading</option>
+               <option value="travel">Travel</option>
+               <option value="food">Food</option>
+             </select>
+             <input id="newImage" type="file" >
+             <div class="mb-3" >
+               <label for="blogContent" class="form-label">Blog Content</label>
+               <textarea class="form-control" id="blogContent" rows="3" placeholder="Add Blog Content" required></textarea>
+             </div>
+        
+             
+               <button id="updateblog" class="btn btn-primary w-100 form-btn" >Update</button>
+             </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

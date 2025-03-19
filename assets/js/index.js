@@ -56,7 +56,7 @@ let PaginationButtons = () => {
     document.getElementById("nextBtn").disabled = currentPage === totalPages;
 };
 
-// Pagination Buttons Functionality
+// Pagination previous Button
 document.getElementById("prevBtn").addEventListener("click", () => {
     if (currentPage > 1) {
         currentPage--;
@@ -64,6 +64,8 @@ document.getElementById("prevBtn").addEventListener("click", () => {
     }
 });
 
+
+// Pagination next Button
 document.getElementById("nextBtn").addEventListener("click", () => {
     let totalPages = Math.ceil(blogs.length / blogsPerPage);
     if (currentPage < totalPages) {

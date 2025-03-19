@@ -12,7 +12,7 @@ import { db,
             const q = query(blogsRef, where("category", "==", "reading"));
             const querySnapshot = await getDocs(q);
             
-            blogContainer.innerHTML = ""; // Purane blogs remove karo
+            blogContainer.innerHTML = ""; 
             if (querySnapshot.empty) {
                 blogContainer.innerHTML = "<p>No blogs found in Fashion category.</p>";
                 return;

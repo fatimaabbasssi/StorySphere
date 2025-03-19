@@ -68,4 +68,4 @@ const ulpoadImage = async () =>{
     }
     
 }
-document.getElementById("uploadImage").addEventListener("click" , ulpoadImage)
+document.getElementById("uploadImage").addEventListener("click" , ulpoadImage);

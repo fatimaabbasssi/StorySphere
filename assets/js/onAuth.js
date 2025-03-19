@@ -8,28 +8,35 @@ import {
     query,
     where,
     doc,
-    getDoc
+    getDoc,
+    updateDoc
 } from "../../config.js";
 
 let profile = document.getElementById("adduser");
 let add = document.getElementById("add");
 let log = document.getElementById("log");
+let sign = document.getElementById("sign");
+let homeWrite = document.getElementById("homewrite");
 let blogContainer = document.getElementById("user-blogs");
 let contact = document.getElementById("contact");
 
 
  
-// 🔥 Check If User Is Signed In
+// user state
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         profile.style.display = "block";
         add.style.display = "block";
         log.style.display = "none";
+        sign.style.display = "none";
         contact.style.display = "block";
+        homeWrite.style.display = "block";
 
-        console.log("User Logged In:", user.uid);
+        console.log("User Logged In:");
+       console.log(window.location.pathname);
+       
 
-        // 🔥 *Fetch User Data*
+        // user
         let userId = user.uid;
         let currentUserRef = doc(db, "users", userId);
         let currentUser = await getDoc(currentUserRef);
@@ -56,7 +63,7 @@ onAuthStateChanged(auth, async (user) => {
 
         }
 
-    //fetching blogs for user
+    //fetching blogs of user
         fetchUserBlogs(userId);
 
     } else {
@@ -84,22 +91,20 @@ let fetchUserBlogs = async (userId) => {
             let blogData = doc.data();
             let blogId = doc.id; // 
 
-            let blogCard = `
+            blogContainer.innerHTML += `
                 <div class="blog-card">
                     <img src="${blogData.image}" alt="Blog Image">
                     <h3>${blogData.topic}</h3>
-                    <p>${blogData.blogcontent}...</p>
+                    <p>${blogData.blogcontent}</p>
                     <p><strong>Category:</strong> ${blogData.category}</p>
-                    <p><strong>Time:</strong> ${blogData.time}</p>
-                  
-                <button type="button" onclick="deleteUser('${blogId}')"  class="btn text-light bg-danger "><i class="fa-solid fa-trash"></i></button>
+                    <p><strong>Time:</strong> ${blogData.time}</p>  
+                    <button type="button" onclick="deleteBlog('${blogId}')"  class="btn text-light bg-danger "><i class="fa-solid fa-trash"></i></button>    
+                    <button type="button" onclick="openModal('${blogId}')"  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalBlog" data-bs-whatever="@mdo"> <i class="fa-solid fa-pencil"></i></button>
+
                 </div>
             `;
-
-            blogContainer.innerHTML += blogCard;
         });
 
-        //<p><strong>Blog ID:</strong> ${blogId}</p> 
     } catch (error) {
         console.log("Error fetching blogs:", error);
     }
@@ -109,7 +114,7 @@ let fetchUserBlogs = async (userId) => {
 //deleting blog
 
 
-window.deleteUser = async (id)=>{
+window.deleteBlog = async (id)=>{
     try {
    
       let userDel = doc(db, "blogs", id);
@@ -124,12 +129,106 @@ window.deleteUser = async (id)=>{
 
 
 
-    
-    
-    
-    
-    
-    
+//opening modal with old values
+
+window.openModal = async (id) => {
+    try {
+        let blogRef = doc(db, "blogs", id);
+        let blogSnap = await getDoc(blogRef);
+
+        if (!blogSnap.exists()) {
+            alert("No such blog found!");
+            return;
+        }
+
+        let blogData = blogSnap.data();
+
+        //old value in modal
+        document.getElementById("newauthor").value = blogData.author || "";
+        document.getElementById("topic").value = blogData.topic || "";
+        document.getElementById("blogContent").value = blogData.blogcontent || "";
+        document.getElementById("option").value = blogData.category || "";
+
+        // getting id of blog
+        document.getElementById("updateblog").setAttribute("data-id", id);
+
+    } catch (error) {
+        console.log("Error fetching blog:", error);
+    }
+};
+
+
+//updating blog
+
+
+document.getElementById("updateblog")?.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    let id = document.getElementById("updateblog").getAttribute("data-id");
+
+    try {
+        let blogRef = doc(db, "blogs", id);
+        let blogSnap = await getDoc(blogRef);
+        if (!blogSnap.exists()) {
+            alert("Blog not found!");
+            return;
+        }
+
+        //new values
+        let newTopic = document.getElementById("topic").value.trim();
+        let newContent = document.getElementById("blogContent").value.trim();
+        let newCategory = document.getElementById("option").value.trim();
+        let imageInput = document.getElementById("newImage"); 
+        const newImageFile = imageInput?.files[0] || null; 
+
+
+        let newImageURL = blogSnap.data()?.image; 
+
+        if (newImageFile) {
+            console.log("Uploading new image...");
+           
+            const cloudName = "diryrdyol";
+            const presetName = "blog-website";
+        
+            const formData = new FormData();
+            formData.append("file", newImageFile);
+            formData.append("upload_preset", presetName);
+            formData.append("cloud_name", cloudName);
+        
+
+            const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+            method: "POST",
+            body: formData,
+        })
+
+            let data = await response.json();
+            if (data.secure_url) {
+               newImageURL = data.secure_url;
+            } else {
+                alert("Image upload failed");
+                return;
+            }
+        }
+
+        console.log(" Firestore Updating");
+        await updateDoc(blogRef, {
+            topic: newTopic,
+            blogcontent: newContent,
+            category: newCategory,
+            image: newImageURL
+        });
+
+        alert("Blog Updated");
+        fetchUserBlogs(auth.currentUser.uid);
+
+    } catch (error) {
+        console.log("Error updating blog : ", error);
+    }
+});
+
+//deleting user
+
+
     // deleteAcc.addEventListener("click" , async () =>{
         //     try {
         //         let userDel = doc(db, "users", userId);

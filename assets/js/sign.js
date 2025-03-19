@@ -1,7 +1,3 @@
-
-
-
-
 import { 
     auth, 
     createUserWithEmailAndPassword, 
@@ -62,8 +58,8 @@ import {
         let userCredential = await createUserWithEmailAndPassword(auth, email, password);
         let user = userCredential?.user;
         let userId = user.uid
-         // send verification email
-       // await sendEmailVerification(auth.currentUser);
+        // send verification email
+       await sendEmailVerification(auth.currentUser);
   
         await setDoc(doc(db, "users", user.uid), {
             name,

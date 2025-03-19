@@ -12,9 +12,9 @@ const fetchFashionBlogs = async () => {
         const q = query(blogsRef, where("category", "==", "fashion"));
         const querySnapshot = await getDocs(q);
         
-        blogContainer.innerHTML = ""; // Purane blogs remove karo
+        blogContainer.innerHTML = "";
         if (querySnapshot.empty) {
-            blogContainer.innerHTML = "<p>No blogs found in Fashion category.</p>";
+            blogContainer.innerHTML = "<p>No blogs found.</p>";
             return;
         }
 
