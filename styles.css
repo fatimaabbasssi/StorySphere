@@ -690,3 +690,10 @@ color: white;
     padding: 0.7em 0;
     color: #989898;
 }
+
+
+.wishlist-btn{
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+}
